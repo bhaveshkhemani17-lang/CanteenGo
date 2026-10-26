@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Order your campus canteen favourites ahead and pick them up without the queue." />
+  <meta name="theme-color" content="#f8f7ef" />
+  <title>CanteenGo — Good Food. Zero Queue.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="page-wrap nav-wrap">
+        <button class="brand" type="button" data-scroll="home" aria-label="CanteenGo home">
+          <!-- <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4l16 16M7 3v6m4-6v6M5 9h7M8.5 9v12M18 3c-2 2-3 5-3 8h3v10" />
+            </svg>
+          </span> -->
+          <span class="brand-copy">
+            Canteen<span class="brand-go">Go</span>
+            <small>GOOD FOOD, RIGHT ON TIME</small>
+          </span>
+        </button>
+
+        <button class="mobile-menu-button" type="button" aria-label="Open navigation" aria-expanded="false"
+          data-action="toggle-nav">
+          <span class="menu-lines" aria-hidden="true"><i></i><i></i></span>
+        </button>
+
+        <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
+          <button class="nav-link active" type="button" data-scroll="home">Home</button>
+          <button class="nav-link" type="button" data-scroll="menu">Menu</button>
+          <button class="nav-link" type="button" data-scroll="how-it-works">How It Works</button>
+          <button class="cart-nav" type="button" data-action="open-cart">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 8h14l1 12H4L5 8Z" />
+              <path d="M9 9V6a3 3 0 0 1 6 0v3" />
+            </svg>
+            <span>Shopping Cart</span>
+            <b id="nav-cart-count" aria-live="polite">0</b>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero page-wrap" id="home">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> THE CAMPUS CANTEEN, ON YOUR TIME</div>
+          <h1 class="display-font">Good Food.<br /><em>Zero Queue.</em></h1>
+          <p class="hero-description">
+            Your break is too good to spend in line. Order your canteen favourites ahead,
+            then pick them up fresh when you’re ready.
+          </p>
+          <div class="hero-actions">
+            <button class="button button-primary" type="button" data-scroll="menu">
+              Explore the Menu <span aria-hidden="true">→</span>
+            </button>
+            <button class="button button-text" type="button" data-scroll="how-it-works">
+              How It Works <span aria-hidden="true">↓</span>
+            </button>
+          </div>
+          <div class="hero-note">
+            <span class="avatars" aria-hidden="true"><i>R</i><i>A</i><i>M</i></span>
+            <span><strong>Made fresh every day</strong><small>By your campus canteen crew</small></span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Fresh campus food">
+          <div class="hero-blob"></div>
+          <img class="hero-burger" src="images/burger.jpg" alt="Freshly made classic veg burger" />
+          <div class="floating-note note-fresh">
+            <span class="note-icon" aria-hidden="true">✳</span>
+            <span><strong>Freshly made</strong><small>Just for your break</small></span>
+          </div>
+          <div class="floating-note note-rating">
+            <span class="rating-star" aria-hidden="true">★</span>
+            <span><strong>4.8 <small>/ 5</small></strong><small>Campus favourite</small></span>
+          </div>
+          <div class="hero-stamp"><span>GOOD FOOD</span><b>·</b><span>GOOD MOOD</span></div>
+          <div class="visual-caption">THE BREAKTIME BURGER <span>01 / 08</span></div>
+        </div>
+      </section>
+
+      <section class="perks page-wrap" aria-label="Why students love CanteenGo">
+        <div class="perk">
+          <span class="perk-icon mint" aria-hidden="true">✳</span>
+          <span><strong>Fresh Food Choices</strong><small>Made with care, every day</small></span>
+        </div>
+        <div class="perk">
+          <span class="perk-icon butter" aria-hidden="true">◷</span>
+          <span><strong>Save Your Break</strong><small>Skip the line, keep the fun</small></span>
+        </div>
+        <div class="perk">
+          <span class="perk-icon peach" aria-hidden="true">✓</span>
+          <span><strong>Easy Pickup</strong><small>Order, collect, get going</small></span>
+        </div>
+      </section>
+
+      <section class="menu-section" id="menu">
+        <div class="page-wrap">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow"><span class="eyebrow-dot"></span> A LITTLE SOMETHING FOR EVERY BREAK</div>
+              <h2 class="display-font">What sounds <em>good?</em></h2>
+            </div>
+            <p>Freshly prepared favourites from your campus kitchen. Find your next breaktime ritual.</p>
+          </div>
+          <div class="menu-toolbar">
+            <div class="category-list" id="category-list" role="group" aria-label="Filter by category"></div>
+            <label class="search-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m16 16 4 4"></path>
+              </svg>
+              <input id="menu-search" type="search" placeholder="Find something tasty..." autocomplete="off" />
+              <button class="clear-search" type="button" data-action="clear-search" aria-label="Clear search"
+                hidden>×</button>
+            </label>
+          </div>
+          <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="how-section" id="how-it-works">
+        <div class="page-wrap how-wrap">
+          <div class="how-intro">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR BREAK, WITHOUT THE WAIT</div>
+            <h2 class="display-font">Three little steps.<br /><em>A much better break.</em></h2>
+            <p>More time for your friends, your playlist, or absolutely nothing. We’re good with all of it.</p>
+            <button class="button button-primary" type="button" data-scroll="menu">Find your favourite <span
+                aria-hidden="true">→</span></button>
+          </div>
+          <div class="steps">
+            <article class="step-card">
+              <div class="step-top"><span class="step-number">01</span><span class="step-symbol">⌕</span></div>
+              <h3>Pick your favourites</h3>
+              <p>Browse the menu and add your canteen classics to the cart.</p>
+              <span class="step-foot">A VERY GOOD START</span>
+            </article>
+            <article class="step-card step-card-raised">
+              <div class="step-top"><span class="step-number">02</span><span class="step-symbol">▢</span></div>
+              <h3>Place your order</h3>
+              <p>Check out in a few taps and get your personal pickup number.</p>
+              <span class="step-foot">NO QUEUE REQUIRED</span>
+            </article>
+            <article class="step-card">
+              <div class="step-top"><span class="step-number">03</span><span class="step-symbol">✓</span></div>
+              <h3>Pick up &amp; dig in</h3>
+              <p>Show your number at the counter when your break begins.</p>
+              <span class="step-foot">THAT’S THE GOOD BIT</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing-cta page-wrap">
+        <div class="closing-illustration" aria-hidden="true">
+          <span class="sun-shape"></span><img src="images/fries.jpg" alt="" />
+        </div>
+        <div>
+          <span class="closing-kicker">YOUR NEXT BREAK CALLED</span>
+          <h2 class="display-font">It wants <em>something tasty.</em></h2>
+          <p>Eight campus favourites are just a few taps away.</p>
+        </div>
+        <button class="button button-light" type="button" data-scroll="menu">Browse the menu <span
+            aria-hidden="true">→</span></button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-wrap footer-wrap">
+        <div class="footer-brand">
+          <!-- <span class="brand-mark" aria-hidden="true">
+             <svg viewBox="0 0 24 24">
+              <path d="M4 4l16 16M7 3v6m4-6v6M5 9h7M8.5 9v12M18 3c-2 2-3 5-3 8h3v10" />
+            </svg> 
+          </span> -->
+          <span>Canteen<span class="brand-go">Go</span></span>
+        </div>
+        <p>Made for campus days, big and small.</p>
+        <span class="footer-legal">© 2025 CanteenGo · Fresh from your campus kitchen</span>
+      </div>
+    </footer>
+
+    <button class="latest-order-chip" type="button" data-action="view-order" hidden>
+      <span class="chip-check" aria-hidden="true">✓</span>
+      <span><small>Latest pickup</small><strong id="latest-order-number"></strong></span>
+      <span aria-hidden="true">→</span>
+    </button>
+
+    <div class="overlay cart-overlay" id="cart-overlay" hidden>
+      <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+        <div class="drawer-head">
+          <div><span class="drawer-kicker">YOUR BREAKTIME PLANS</span>
+            <h2 class="display-font" id="cart-title">Your cart <span id="cart-title-count">(0)</span></h2>
+          </div>
+          <button class="icon-button" type="button" data-action="close-cart" aria-label="Close cart">×</button>
+        </div>
+        <div class="empty-cart" id="empty-cart">
+          <div class="empty-bag" aria-hidden="true">⌑</div>
+          <h3>Your cart is taking a breather.</h3>
+          <p>Add a canteen favourite and we’ll have it ready for you.</p>
+          <button class="button button-primary" type="button" data-action="browse-menu">Explore the menu <span
+              aria-hidden="true">→</span></button>
+        </div>
+        <div class="cart-lines" id="cart-lines" hidden></div>
+        <div class="cart-summary" id="cart-summary" hidden>
+          <div class="summary-row"><span>Items <small id="cart-summary-count">(0)</small></span><strong
+              id="cart-item-count">0</strong></div>
+          <div class="summary-row"><span>Subtotal</span><strong id="cart-subtotal">₹0</strong></div>
+          <p class="pickup-hint"><span aria-hidden="true">◷</span> Pickup is at the canteen counter</p>
+          <div class="checkout-field">
+            <label for="customerName">Your name</label>
+            <input type="text" id="customerName" placeholder="Enter your name" required />
+          </div>
+          <button class="button button-primary checkout-button" type="button" data-action="place-order">Place My Order
+            <span aria-hidden="true">→</span></button>
+          <p class="checkout-caption">Pay at pickup · No extra charges</p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="overlay order-overlay" id="order-overlay" hidden>
+      <section class="order-modal" role="dialog" aria-modal="true" aria-labelledby="order-title">
+        <button class="icon-button modal-close" type="button" data-action="close-order"
+          aria-label="Close order details">×</button>
+        <div class="success-mark" aria-hidden="true">✓</div>
+        <span class="drawer-kicker">THAT WAS EASY</span>
+        <h2 class="display-font" id="order-title">Order is <em>in!</em></h2>
+        <p class="order-intro">Your canteen crew has your order. Swing by the counter when your break begins.</p>
+        <div class="pickup-ticket">
+          <span>PICKUP NUMBER</span>
+          <strong id="order-number"></strong>
+
+
+          <div class="ticket-status">
+            <span class="status-dot"></span>
+            <span>Status</span>
+            <b id="userOrderStatus">Pending</b>
+          </div>
+
+
+        </div>
+        <div class="order-details-head"><strong>Your order</strong><span id="order-date"></span></div>
+        <div class="order-items" id="order-items"></div>
+        <div class="order-total"><span>Total at pickup</span><strong id="order-total">₹0</strong></div>
+        <button class="button button-primary order-done" type="button" data-action="close-order">Lovely, thanks <span
+            aria-hidden="true">✓</span></button>
+        <p class="order-persist-note">These details are saved in this browser for your next visit.</p>
+      </section>
+    </div>
+    <div class="sr-only" id="live-message" aria-live="polite"></div>
+  </div>
+</body>
+
+</html>

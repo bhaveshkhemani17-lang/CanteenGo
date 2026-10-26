@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CanteenGo | Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body class="admin-page">
+
+    <header class="admin-header">
+        <a href="index.html" class="admin-brand">Canteen<span>Go</span></a>
+        <div>
+            <span class="admin-label">ADMIN DEMO</span>
+            <a href="index.html" class="back-link">View Website ↗</a>
+        </div>
+    </header>
+
+    <main class="admin-container">
+        <section class="admin-welcome">
+            <div>
+                <p class="admin-eyebrow">CANTEEN MANAGEMENT</p>
+                <h1>Admin Dashboard</h1>
+                <p>Manage customer orders and your food menu.</p>
+            </div>
+            <button id="refreshDashboard" class="admin-button">
+                ↻ Refresh
+            </button>
+        </section>
+
+        <p id="adminMessage" class="admin-message" role="status"></p>
+
+        <!-- Statistics -->
+        <section class="stats-grid">
+            <article class="stat-card">
+                <p>Total Orders</p>
+                <h2 id="totalOrders">0</h2>
+            </article>
+
+            <article class="stat-card">
+                <p>Pending Orders</p>
+                <h2 id="pendingOrders">0</h2>
+            </article>
+
+            <article class="stat-card">
+                <p>Completed Sales</p>
+                <h2 id="completedSales">₹0.00</h2>
+            </article>
+        </section>
+
+        <!-- Orders -->
+        <section class="admin-section">
+            <div class="section-heading">
+                <div>
+                    <p class="admin-eyebrow">LIVE ORDER MANAGEMENT</p>
+                    <h2>Customer Orders</h2>
+                </div>
+            </div>
+
+            <div class="admin-table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Update</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTable">
+                        <tr>
+                            <td colspan="6">Loading orders...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Add food -->
+        <section class="admin-section">
+            <div class="section-heading">
+                <div>
+                    <p class="admin-eyebrow">MENU MANAGEMENT</p>
+                    <h2>Add Food Item</h2>
+                </div>
+            </div>
+
+
+            <form id="foodForm" class="food-form">
+                <div class="form-field">
+                    <label for="foodName">Food Name</label>
+                    <input type="text" id="foodName" maxlength="100" placeholder="e.g. Veg Sandwich" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="foodPrice">Price (₹)</label>
+                    <input type="number" id="foodPrice" min="0" step="0.01" placeholder="e.g. 60" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="foodCategory">Category</label>
+                    <input type="text" id="foodCategory" maxlength="60" placeholder="e.g. Snacks" required>
+                </div>
+
+                <!-- Upload food image -->
+                <div class="form-field">
+                    <label for="foodImage">Food Image</label>
+
+                    <input type="file" id="foodImage" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
+
+                    <button type="button" class="admin-button" id="uploadFoodImageButton">
+                        📷 Upload Food Image
+                    </button>
+
+                    <img id="foodImagePreview" alt="Food image preview"
+                        style="display:none; width:180px; margin-top:12px; border-radius:10px;">
+
+                    <p id="foodImageStatus"></p>
+                </div>
+
+                <button type="submit" class="admin-button">
+                    + Add Food
+                </button>
+            </form>
+
+
+            <h3 class="menu-heading">Current Menu</h3>
+            <div id="foodList" class="food-list">
+                Loading food items...
+            </div>
+        </section>
+    </main>
+
+    <footer class="admin-footer">
+        CanteenGo · College Project Demo
+    </footer>
+
+</body>
+
+</html>
