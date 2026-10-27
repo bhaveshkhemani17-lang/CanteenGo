@@ -284,7 +284,6 @@ if (!window.location.pathname.endsWith("admin.html")) {
 
       return `
         <article class="cart-line">
-          <img src="./${escapeHtml(product.image)}" alt="">
 
           <div class="cart-line-info">
             <strong>${escapeHtml(product.name)}</strong>
